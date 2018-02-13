@@ -8,13 +8,4 @@
   </li>
 </ul>
  
-<div *ngIf="selectedContact">
-  <h2>{{ selectedContact.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedContact.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedContact.name" placeholder="name">
-    </label>
-  </div>
- 
-</div>
+<app-contact-detail [contact]="selectedContact"></app-contact-detail>
