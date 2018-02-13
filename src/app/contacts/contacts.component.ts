@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from './contact';
 import { CONTACTS } from './mock-contacts';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -17,13 +18,20 @@ export class ContactsComponent implements OnInit {
 
   selectedContact: Contact;
 
-  constructor() {}
+  constructor(private contactService: ContactService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getContact();
+  }
 
   onSelect(contact: Contact): void {
     this.selectedContact = contact;
     console.log(contact);
+  }
+
+  getContact(): void {
+  this.contactService.getContact()
+  .subscribe(contacts => this.contacts = contacts);
   }
 
 }
