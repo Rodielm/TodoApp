@@ -8,6 +8,8 @@ import { ContactService } from './contacts/contact.service';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './messages/message.service';
 
 
 @NgModule({
@@ -15,12 +17,13 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     AppComponent,
     ContactsComponent,
     ContactDetailComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [ContactService],
+  providers: [ContactService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
