@@ -10,6 +10,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/message.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { MessageService } from './messages/message.service';
     ContactsComponent,
     ContactDetailComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ContactService, MessageService],
   bootstrap: [AppComponent]
