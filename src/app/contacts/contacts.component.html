@@ -1,11 +1,20 @@
 <h2>My contacts</h2>
 
-<ul class="contacts">
+<!-- old way -->
+<!-- <ul class="contacts">
   <li *ngFor="let contact of contacts"
     [class.selected]="contact === selectedcontact"
     (click)="onSelect(contact)">
     <span class="badge">{{contact.id}}</span> {{contact.name}}
   </li>
+</ul> -->
+
+<ul class="contacts">
+  <li *ngFor="let contact of contacts">
+    <a routerLink="/detail/{{contact.id}}">
+      <span class="badge">{{contact.id}}</span> {{contact.name}}
+    </a>
+  </li>
 </ul>
- 
-<app-contact-detail [contact]="selectedContact"></app-contact-detail>
+
+<!-- <app-contact-detail [contact]="selectedContact"></app-contact-detail> -->
