@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getContacts(): void {
-    this.contactService.getContact()
+    this.contactService.getContacts()
       .subscribe(contacts => this.contacts = contacts.slice(1, 5));
   }
 

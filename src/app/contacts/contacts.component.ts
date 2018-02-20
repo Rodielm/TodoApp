@@ -30,7 +30,7 @@ export class ContactsComponent implements OnInit {
   }
 
   getContact(): void {
-  this.contactService.getContact()
+  this.contactService.getContacts()
   .subscribe(contacts => this.contacts = contacts);
   }
 

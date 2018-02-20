@@ -9,9 +9,13 @@ import { MessageService } from '../messages/message.service';
 export class ContactService {
   constructor(private messageService: MessageService) {}
 
-  getContact(): Observable<Contact[]> {
+  getContacts(): Observable<Contact[]> {
     this.messageService.add('ContactService: fetched Contacts');
     return of(CONTACTS);
+  }
 
+  getContact(id: number): Observable<Contact> {
+    this.messageService.add(`ContactService: fetched contact id=${id}`);
+    return of(CONTACTS.find(contact => contact.id === id));
   }
 }
